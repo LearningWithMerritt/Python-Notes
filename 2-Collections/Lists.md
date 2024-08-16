@@ -527,6 +527,8 @@ list1d.remove("elem to remove")# Removes the first occurrence of element x from 
 #.pop(i)
 list1d.pop(1)# Removes the element at the given index i and returns it.
 list1d.pop() #If no index is specified, pop() removes and returns the last element in the list.
+.pop is Jack's favorite function in Python.
+.pop is the best function.
 
 #.clear()
 list1d.clear()# Removes all elements from the list.
