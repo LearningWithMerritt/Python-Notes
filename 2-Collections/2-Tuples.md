@@ -1,68 +1,98 @@
-# <table><th>Python Tuples</th></table>
+# `Python Tuples`
 ___
-   Covered in this file
-1. Defining a Tuple
-2. Creating a Tuple 
-3. Converting from Lists and Sets
-4. Tuple Operations
-5. Accessing Elements in a Tuple
-6. Changing Elements in a Tuple
-7. Built-in Tuple function calls 
-8. Built-in Tuple methods calls
-9. Tuple Slicing and Concatenation
-10. Tuple of Tuples: Nested Tuples
-11. Unpacking Collections
 
-12. Tuple Iteration: Looping
+Covered in this file:
+1. [`Collection Types`](#collection-types)
+1. [`Defining a Tuple`](#defining-a-tuple)
+1. [`Creating a Tuple`](#creating-a-tuple)
+1. [`Converting from Lists and Sets`](#converting-from-lists-and-sets)
+1. [`Tuple Operations`](#tuple-operations)
+    1. [`Checking Tuple Membership`](#checking-tuple-membership)
+    1. [`Concatenating Tuples (joining)`](#concatenating-tuples-joining)
+    1. [`Concatenate and Assign Tuple`](#concatenate-and-assign-tuple)
+    1. [`Duplicate Tuples`](#duplicate-tuples)
+    1. [`Duplicate and Assign Tuples`](#duplicate-and-assign-tuples)
+1. [`Accessing Elements in a Tuple`](#accessing-elements-in-a-tuple)
+1. [`Tuple Elements Cannot be Changed`](#tuple-elements-cannot-be-changed)
+1. [`Built-in Tuple Function Calls`](#built-in-tuple-function-calls)
+1. [`Built-in Tuple Method Calls`](#built-in-tuple-method-calls)
+1. [`Subtuples: Slicing and Concatenation`](#subtuples-slicing-and-concatenation)
+1. [`Tuples of Tuples: Nested Tuples`](#tuples-of-tuples-nested-tuples)
+1. [`Unpacking Collections`](#unpacking-collections)
+1. [`Tuple Iteration: Looping`](#tuple-iteration-looping)
+
+<br>
+
+___
+
+<br>
+
+# `Collection Types`
 
 There are four major collection data types in the Python programming language:
 
-> **List:**   
-collection which is ordered(indexed), mutable, allows duplicate members, and uses [ ] to enclose members.
+A `List` is a collection which is ordered(indexed), mutable, allows duplicate members, and uses [ ] to enclose members.
 ```python
 list1d = [1,2,3]
 ```
 
-> **Tuple:**  
-collection which is ordered(indexed), immutable, allows duplicate members and uses ( ) to enclose members.
+<br>
+
+A `Tuple` is a collection which is ordered(indexed), immutable, allows duplicate members and uses ( ) to enclose members.
 ```python
 tuple1d = (1,2,3)
 ```
-> **Set:**   
-collection which is unordered(not indexed), mutable, does NOT allow duplicate members and uses { } to enclose members.
+
+<br>
+
+A `Set` is a collection which is unordered(not indexed), mutable, does NOT allow duplicate members and uses { } to enclose members.
 ```python
 set1d = {1,2,3}
 ```
-> **Dictionary:**   
-collection which is ordered(indexed with a key), mutable, does NOT allow duplicate members and uses { : } to enclose members.
+
+<br>
+
+A `Dictionary` is a collection which is ordered(indexed with a key), mutable, does NOT allow duplicate members and uses { : } to enclose members.
 ```python
 dict1d = {"a": 1, "b": 2,"c": 3}
 ```
-|**List**|**Tuple**|**Set**|**Dictionary**|
+
+<br>
+
+|`List`|`Tuple`|`Set`|`Dictionary`|
 |:-:|:-:|:-:|:-:|
 |ordered (numerically indexed)|ordered (numerically indexed)|unordered (not indexed)|ordered (indexed with a key)|
 |mutable|immutable|mutable|mutable|
 |duplicates|duplicates|NO duplicates|NO duplicates|
 |**[ ]**|**( )**|**{ }**|**{ : }**| 
 
-> * *Data Structure: a specialized format for organizing, processing, retrieving, and storing data.*
-> * *Collection: a data structure that holds multiple elements*
-> * *Member: an item stored within a collection*
-> * *Element: is a synonym for member*
-> * *Ordered: having a specific order 0,1,2,... (ie. indexed)*
-> * *Indexed:  elements are associated with a specific identifier (index), which can be used to directly locate and access the data*
-> * *Mutable: elements can change*
-> * *Immutable: elements cannot change*
+* *`Data Structure`: a specialized format for organizing, processing, retrieving, and storing data.*
+* *`Collection`: a data structure that holds multiple elements*
+* *`Member`: an item stored within a collection*
+* *`Element`: is a synonym for member*
+* *`Ordered`: having a specific order 0,1,2,... (ie. indexed)*
+* *`Indexed`:  elements are associated with a specific identifier (index), which can be used to directly locate and access the data*
+* *`Mutable`: elements can change*
+* *`Immutable`: elements cannot change*
 
-## <table><th>Defining a Tuple</th></table>
+
+<br>
+
+
+[Back to Top](#python-tuples)
+
 ___
-**Tuples:**
-> * are basically lists that cannot be changed
-> * are collections which are ordered(indexed), immutable, allow duplicate members and uses ( ) to enclose members.
 
-### Tuple Example:
+<br>
 
 
+# `Defining a Tuple`
+
+Basically: `Tuples` are lists that cannot be changed
+
+Specifically: `Tuples` are collections which are ordered(indexed), immutable, allow duplicate members and uses ( ) to enclose members.
+
+Tuple Example:
 ```python
 ("a","b","c","d","e") #a tuple
 
@@ -98,21 +128,17 @@ ucase_alpha = (
     'Y', 'Z'
 )
 
-
-
 ```
 
-A tuple contains multiple items called elements or members
+A `tuple` contains multiple items called `elements` or `members`
 |elements|"a"|"b"|"c"|"d"|"e"|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |indexes|0|1|2|3|4|
 |Length|||||5|
 
-An index indicates the spot at which an element is located.   
-Indexes can be used to access each element in the tuple. 
-
-The length of a tuple is the total number of elements contained in the list   
-
+> - An `index` indicates the spot at which an `element` is located.   
+> - `Indexes` can be used to access each `element` in the list.   
+> - The length of a tuple is the total number of elements contained in the list  
 
 ```python
 #        (------------------elements---------------------)
@@ -122,33 +148,35 @@ tuple1d = ("a","b","c","d","e","f","g","h","i","j","k","l")
 #Length = 12
 ```
 
-## <table><th>Creating a Tuple</th></table>
+<br>
+
+
+[Back to Top](#python-tuples)
+
 ___
-> * use ( ) to denote a tuple
+
+<br>
+
+# `Creating a Tuple`
+Use `()` to denote a tuple
 > * seperate elements of a tuple with commas
-> * The tuple(iterable) constructor builds a tuple
+> * The `tuple(iterable)` constructor builds a tuple
 
-> * Create an empty tuple with ( )
-
-
+Create an empty tuple with `()`
 ```python
 () # creates an empty tuple
 
 tuple1d = ()
 ```
 
-> * Create a tuple with a single value using a trailing **,**
-
-
+Create a tuple with a single value using a trailing `,`
 ```python
 tuple1d = ("a",)
 #OR
 tuple1d = "a", 
 ```
 
-> * Enclose comma seperated elements with ( )
-
-
+Enclose comma seperated elements with `()`
 ```python
 #use () and seperate each element with commas
 tuple1d = (1,2,3,4,5,6,7,8,9)
@@ -156,7 +184,7 @@ tuple1d = (1,2,3,4,5,6,7,8,9)
 #length = 9
 ```
 
-> * Use the tuple(iterable) constructor call
+Use the `tuple(iterable)` constructor call
 
 syntax:
 
@@ -169,14 +197,23 @@ tuple() # Returns: ()
 tuple('abcdef') # Returns('a', 'b', 'c', 'd', 'e', 'f')
 ```
 
-## <table><th>Converting from Lists and Sets</th></table>
+<br> 
+
+[Back to Top](#python-tuples)
+
 ___
-> * The list(iterable) constructor builds a list
-> * The tuple(iterable) constructor builds a tuple
-> * The set(iterable) constructor builds a set
+
+<br>
+
+# `Converting from Lists and Sets`
+* The `list(iterable)` constructor builds a list
+* The `tuple(iterable)` constructor builds a tuple
+* The `set(iterable)` constructor builds a set
+
+<br>
 
 Constructors are special methods defined by a class that are used to build instances of a class. 
-> * ie. the tuple(iterable) constructor makes a tuple.
+> * ie. the `tuple(iterable)` constructor makes a tuple.
 
 
 ```python
@@ -201,19 +238,28 @@ list1d = list(tuple1d) # Returns: [1,2,3,4,5]
 set1d = set(tuple1d) # Returns: {1,2,3,4,5}
 ```
 
-## <table><th>Tuple Operations</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
 
+<br>
+
+# `Tuple Operations`
 |Operation| Description|
 |:-:|:-:|
-|in| checks if a value is a member|
-|not in| checks if a value is not a member|
-|+|concatenates two tuples|
-|+=|concatenates and assigns (must be another tuple)|
-|*| duplicates a tuple|
-|*=|duplicates and assigns |
+|`in`| checks if a value is a member|
+|`not in`| checks if a value is not a member|
+|`+`|concatenates two tuples|
+|`+=`|concatenates and assigns (must be another tuple)|
+|`*`| duplicates a tuple|
+|`*=`|duplicates and assigns |
 
-> * Check if a value is a member of a tuple
+<br>
+
+## `Checking Tuple Membership`
+Use `in` to check if a value is apart of a tuple
 
 syntax:
 
@@ -227,7 +273,7 @@ numbers = (1,2,3,4,5)
 6 in numbers # Returns: False
 ```
 
-> * Check if a value is not apart of a tuple
+Use `not in` to check if a value is not apart of a tuple. 
 
 syntax:
 
@@ -241,7 +287,10 @@ numerals = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
 "4"  not in numerals # Returns: False
 ```
 
-> * Concatenation (joining)
+<br>
+
+## `Concatenating Tuples (joining)`
+Use `+` to concatenate tuples.
 
 syntax:
 
@@ -259,7 +308,11 @@ print(living_things)
 # ('dog', 'cat', 'cow', 'horse', 'tree', 'grass', 'shrub', 'moss')
 ```
 
-> * Concatenate and Assign (must be another tuple)
+<br>
+
+## `Concatenate and Assign Tuple`
+Use `+=` to concatenate and assign tuples.
+> * only works with two or more tuples
 
 syntax:
 
@@ -277,13 +330,16 @@ print(prime_numbers)
 # (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
 ```
 
-> * Duplication
+<br>
+
+## `Duplicate Tuples`
+Use `*` to duplicate tuples.
 
 syntax:
 
     tuple1 * n
 
-*n is the number of times to duplicate the tuple*
+> *n is the number of times to duplicate the tuple*
 
 
 ```python
@@ -293,13 +349,16 @@ pattern * 4
 # Returns: (1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1)
 ```
 
-> * Duplicate and Assign
+<br>
+
+## `Duplicate and Assign Tuples`
+Use `*=` to duplicate and assign tuples. 
 
 syntax:
 
     tuple1 *= n
 
-*n is the number of times to duplicate the tuple*
+> *n is the number of times to duplicate the tuple*
 
 
 ```python
@@ -308,21 +367,27 @@ b *= 5
 print(b) # Output: (1, 0, 1, 0, 1, 0, 1, 0, 1, 0)
 ```
 
-## <table><th>Accessing Elements in a Tuple</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
 
-To access the data in a tuple using the index an subscripting []
+<br>
+
+# `Accessing Elements in a Tuple`
+To access the data in a tuple using the `index` an subscripting `[]`
 syntax:
 
     tuple[index]
 
-tuple1d = ("w","x","y","z")
+`tuple1d = ("w","x","y","z")`
 |elements |"w"|"x"|"y"|"z"|
 |:-:|:-:|:-:|:-:|:-:|
 |index|0|1|2|3|
 |reverse/negative index|-4|-3|-2|-1|
 
-*elements in a tuple are accessed by their index*
+`elements in a tuple are accessed by their index`
 
 
 ```python
@@ -333,7 +398,9 @@ tuple1d = ("w","x","y","z")
 #             Length = 4
 ```
 
-**Regular Indexing**
+<br>
+
+`Regular Indexing`
 
 
 ```python
@@ -344,7 +411,9 @@ tuple1d[5]   # Returns: f
 tuple1d[10]  # Returns: k
 ```
 
-**Reverse/Negative Indexing**
+<br>
+
+`Reverse/Negative Indexing`
 
 
 ```python
@@ -355,26 +424,43 @@ tuple1d[-5]  # Returns: h
 tuple1d[-10] # Returns: c
 ```
 
-## <table><th>Changing Elements in a Tuple</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
 
-Elements (data) in a list cannot be changed in a tuple
+<br>
 
-***Tuples are immutable, meaning that the data that it stores cannot be changed. In order to change a tuple a new tuple must be created.***
+# `Tuple Elements Cannot be Changed`
+`Elements` (data) in a list cannot be changed in a tuple.
+> Tuples are `immutable`, meaning that the data that it stores cannot be changed. In order to change a tuple a new tuple must be created.
 
-## <table><th>Built-in Tuple Function Calls</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
-**Functions:**
-* are blocks of reusable code, that perform a specific task.
-* must be defined before they are called
 
-* are typically called using their name followed by parenthesis with any required arguments inside.
+<br>
+
+# `Built-in Tuple Function Calls`
+___
+`Functions` are blocks of reusable code, that perform a specific task.
+> * must be defined before they are called
+> * are typically called using their name followed by parenthesis with any required arguments inside.
 
 
-Built-in Functions are pre-defined by the standard library
+`Built-in Functions are pre-defined by the Python standard library`
 
 
 ```python
+#         (------------------elements---------------------)
+tuple1d = ("a","b","c","d","e","f","g","h","i","j","k","l")
+# index   ( 0   1   2   3   4   5   6   7   8   9   10  11)
+# reverse (-12 -11 -10 -9  -8  -7  -6  -5  -4  -3  -2   -1)
+# length = 12
+
 #len()
 len(tuple1d)   #returns number of elements in a tuple
 len(tuple1d)-1 #returns the last index of the 
@@ -394,27 +480,35 @@ sorted(tuple1d) #returns a sorted list of the specified iterable
 
 ```
 
-## <table><th>Built-in Tuple Method Calls</th></table>
-___
-**Methods:**
-* are functions defined by a class
-* are typically called using an object or class and dot ( . ) syntax
+<br>
 
-syntax for methods which require objects:
+[Back to Top](#python-tuples)
+
+___
+
+<br>
+
+# `Built-in Tuple Method Calls`
+`Methods` are functions defined by a class
+> * are typically called using an object or class and dot ( . ) syntax
+
+<br>
+
+> syntax for methods which require objects:
 
     object.method(arguments)
 
-syntax for methods which DO NOT require objects:
+> syntax for methods which DO NOT require objects:
 
     class.method(arguments)
 
-Built-in methods are pre-defined by classes pre-defined by the standard library
+`Built-in methods are pre-defined by classes pre-defined by the standard library`
 
-To see what methods you can call on an object use:  
+> To see what methods you can call on an object use:  
     
     dir(object)  
 
-To see more information on a specific method use:  
+> To see more information on a specific method use:  
     
     help(object.method)
 
@@ -428,11 +522,17 @@ tuple1d.index("elem",2,5) #(optional start and end indices can be specified).
 tuple1d.count("elem")# Returns the number of occurrences of element x in the tuple.
 ```
 
-## <table><th>Tuple Slicing</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
-**Slicing:**
-> * is creating a subtuple, by returning parts of the original tuple
-> * use slicing notation [ : : ] to return a subtuple
+
+<br>
+
+# `Subtuples: Slicing and Concatenation`
+`Slicing` is the creation of a subtuple, by returning parts of an original tuple.
+> * use slicing notation `[ : : ]` to return a subtuple
 
 slicing syntax:
     
@@ -447,7 +547,7 @@ Be sure to pick the right stop_index
 > * for ascending ( + step ) subtuple add one to the last index you want to include (stop + 1)  
 > * for descending ( - step ) subtuple subtract one from the last index you want to include (stop - 1)
 
-### Slicing Examples:
+examples:
 
 
 ```python
@@ -466,7 +566,9 @@ tuple1d[7:0:-1]    # Returns: ('h', 'g', 'f', 'e', 'd', 'c', 'b')
 tuple1d[8:0:-2]    # Returns: ('i', 'g', 'e', 'c')
 ```
 
-### Ascending Slices:
+<br>
+
+## `Ascending Slices`
 > * Default start_index is 0
 > * Default stop_index is len(tuple) (end of the tuple)
 > * Default step is 1
@@ -491,7 +593,9 @@ tuple1d[:3]  # Returns: ('a', 'b', 'c')
 tuple1d[6::] # Returns: ('g', 'h', 'i')
 ```
 
-### Descending Slices:
+<br>
+
+## `Descending Slices`
 > * Default start_index is len(list) (end of the list)
 > * Default stop_index is the beginning of the list
 >   * In order to include the character at index 0 you must use the default stop_index 
@@ -513,9 +617,15 @@ tuple1d[-3::-1]    # Returns: ('g', 'f', 'e', 'd', 'c', 'b', 'a')
 tuple1d[::-3]      # Returns: ('i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a')
 ```
 
-## <table><th>Tuples of Tuples: Nested Tuples</th></table>
+<br>
+
+[Back to Top](#python-tuples)
 ___
-> * a 2D tuple is a tuple that contains other tuples (a tuple of tuples).  
+
+<br>
+
+# `Tuples of Tuples: Nested Tuples`
+A `Nested tuple` or `Multidimensional tuple` is a tuple that contains other tuples (a tuple of tuples).  
 > * called a nested tuple or multidimensional tuple  
 > * each tuple is accessed with its index and subscripting
 >
@@ -534,7 +644,7 @@ tuple2d = (("a","b","c","d","e","f"),("g","h","i","j","k","l"),("m","n","o","p",
 ```
 
 Formatting the 2D tuples in our code can make them easier to read.  
-A 2D tuple can then be thought of as rows, and columns.
+> A 2D tuple can then be thought of as `rows`, and `columns`.
 
 
 ```python
@@ -557,11 +667,13 @@ tuple2d = (
 ) #    column indexes
 ```
 
-### Accessing Elements from a 2D List
+## `Accessing Elements from a 2D List`
 syntax:
     
     2DTuple[tuple_index][element_index]
+
     OR
+
     2DTuple[row][col]
 
 
@@ -580,13 +692,15 @@ tuple2d[3][5] # Returns: x
 
 ```
 
-### Length of 2D tuples
-The len() function call returns the number of elements in the tuple
-> * len(tuple2d) returns the number of rows/tuples
-> * len(tuple2d[row]) returns the number of columns/elements in a given row/tuple
+<br>
 
-> * len(tuple2d)-1 returns the last row index
-> * len(tuple2d[row])-1 returns the last column index in a given row/tuple
+## `Length of 2D Tuples`
+The `len()` function call returns the number of elements in the tuple
+> * `len(tuple2d)` returns the number of rows/tuples
+> * `len(tuple2d[row])` returns the number of columns/elements in a given row/tuple
+
+> * `len(tuple2d)-1` returns the last row index
+> * `len(tuple2d[row])-1` returns the last column index in a given row/tuple
 
 
 ```python
@@ -608,18 +722,24 @@ len(tuple2d[row])   # 6 number of columns/elements in a given row/tuple
 len(tuple2d[row])-1 # 5 last column index 
 ```
 
-## <table><th>Unpacking Collections</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
 
-> * Unpacking refers to the process of extracting individual elements from a container (such as a list, tuple, dictionary)
+<br>
+
+# `Unpacking Collections`
+`Unpacking` refers to the process of extracting individual elements from a container (such as a list, tuple, dictionary)
 > * Values in a collection can be automatically assigned to variables
-> * Use the \* symbol to unpack multiple values into a single variable
+> * Use the `*` symbol to unpack multiple values into a single variable
 >
-> * This used with *args and **kwargs, see variable length arguments 
+> * This used with `*args` and `**kwargs`, see variable length arguments 
 
-### Unpacking Into Variables
+<br>
 
-
+## `Unpacking Into Variables`
 ```python
 tuple1d = (1,2,3)
 a, b, c = tuple1d
@@ -632,8 +752,9 @@ a, b = tuple1d
 # Outputs: ValueError: too many values to unpack (expected 2)
 ```
 
-### Unpack Mutliple Values Into One Variable With *
+<br>
 
+## `Unpacking Mutliple Values Into One Variable`
 
 ```python
 # collects multiple values into a single variable
@@ -651,7 +772,10 @@ l2 = (4,5,6)
 print( (*l1,*l2) )# Output: (1,2,3,4,5,6)
 ```
 
-### Ignore Unpacked Values with ( _ )
+<br>
+
+## `Ignore Unpacked Values` 
+Ignore Unpacked Values with `_`
 
 
 ```python
@@ -660,14 +784,20 @@ _, b, _ = tuple1d
 #b = 2
 ```
 
-## <table><th>Tuple Iteration: Looping</th></table>
+<br>
+
+[Back to Top](#python-tuples)
+
 ___
 
-It is often necessary to go through the contents of a tuple item by item. This is called iterating through a tuple.
+<br>
+
+# `Tuple Iteration: Looping`
+It is often necessary to go through the contents of a tuple item by item. This is called `iterating` through a tuple.
 
 There are several ways to iterate through a tuple.
 
-We will this tuple of alphanumeric characters for demonstrating iteration. 
+We will use this tuple of alphanumeric characters generated using tuple comprehensions as an example tuple to iterate through.
 
 
 ```python
@@ -683,7 +813,9 @@ alphanumeric = (
 
 ```
 
-### Looping through the indexes of a tuple
+<br>
+
+## `Looping through the indexes of a tuple`
 syntax:
 
     for index in range(len(tuple)):
@@ -705,7 +837,9 @@ for i in range(len(alphanumeric)):
 # 61
 ```
 
-### Looping through the elements of a tuple
+<br>
+
+## `Looping through the elements of a tuple`
 syntax:
 
     for element in tuple:
@@ -727,7 +861,9 @@ for char in alphanumeric:
 # z
 ```
 
-### Looping through the elements backwards
+<br>
+
+## `Looping through the elements backwards`
 syntax:
 
     for element in reversed(tuple):
@@ -749,7 +885,9 @@ for elem in reversed(alphanumeric):
 # 0
 ```
 
-### Looping through the index and elements at the same time
+<br>
+
+## `Looping through the index and elements at the same time`
 
 syntax:
 
@@ -774,3 +912,15 @@ print(alphanumeric)
 #  (50, 'o'), (51, 'p'), (52, 'q'), (53, 'r'), (54, 's'), (55, 't'), (56, 'u'), (57, 'v'), (58, 'w'), (59, 'x'), 
 #  (60, 'y'), (61, 'z')]
 ```
+
+___
+
+<br>
+
+[Back to Top](#python-tuples)
+
+___
+
+<br>
+
+*Created and maintained by Mr. Merritt*  

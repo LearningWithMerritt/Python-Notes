@@ -1,22 +1,34 @@
-# `Comments and Hello World!`
----
-
-<br>
-
+# `Introduction to Python: Comments and Hello World!`
+___
 Covered in this file:
-1. Introduction to the Python Programming Language
-2. Single/Multi Line Comments
-3. First Program: Console Output
-4. First Program: User Input
-5. Executing Python Programs
-6. You are Experiencing an Error!
+1. [`Introduction to the Python Programming Language`](#an-introduction-to-the-python-programming-language)
+1. [`Single/Multi Line Comments`](#singlemulti-line-comments)
+    1. [`Single-line comments`](#single-line-comments)
+    1. [`Multi-line comments`](#multi-line-comments-docstrings)
+1. [`First Program: Console Output`](#first-program-console-output)
+1. [`First Program: User Input`](#first-program-user-input)
+1. [`Executing Python Programs`](#executing-a-python-program)
+    1. [`How Python Source Code is executed`](#how-python-source-code-is-executed)
+    1. [`Executing Your Program`](#executing-your-program)
+1. [`Python Installation Path`](#python-installation-path)
+    1. [`Python on Windows`](#python-on-windows)
+    1. [`Python on MacOs/Linux`](#python-on-linux-or-macos)
+1. [`You are Experiencing an Error!`](#you-are-experiencing-an-error)
+    1. [`Syntax/Compile Time Errors`](#syntaxcompile-time-errors)
+        1. [`Fixing Syntax/Compile Time Errors`](#fixing-syntaxcompile-time-errors)
+    1. [`Runtime Errors`](#runtime-errors)
+        1. [`Fixing Runtime Errors`](#fixing-runtime-errors)
+    1. [`Logical Errors`](#logical-errors)
+        1. [`Fixing Logical Errors`](#fixing-logical-errors)
 
 <br>
 
----
-# `Script Kiddie's First Program:`
-##  `An Introduction to the Python Programming Language!`
+___
 
+<br>
+
+# `An Introduction to the Python Programming Language!`
+## -- `Script Kiddie's First Program:`
 ### ***Welcome Script Kiddies, to the Python Programming Language***
 *As a new programmer you might be refered to as a Script Kiddie.*   
 *This is a programmer joke to describe someone who does not know much about programming*  
@@ -50,19 +62,23 @@ To install python on your computer start here: [https://www.python.org/downloads
 >
 > * The python interpreter is invoked using the 'python3' command on UNIX like systems (Linux, Mac) 
 
-> * The interpreter can be envoked interactively allowing you to write and execute line by line. 
+> * The interpreter can be invoked interactively allowing you to write and execute line by line. 
 
-Windows command syntax ( > represents the terminal prompt and can be omitted):
+<br>
+
+Windows command syntax 
+> '>' represents the terminal prompt and can be omitted:
 
     > python
 
-Linux/MacOS command syntax ( $ represents the terminal prompt and can be omitted):
+Linux/MacOS command syntax 
+> '$' represents the terminal prompt and can be omitted:
 
     $ python3
 
 <br>
 
-> * The interpreter can be envoked and provided a filepath argument in order to interpret code written in a text file (.py)  
+> * The interpreter can be invoked and provided a filepath argument in order to interpret code written in a text file (.py)  
 
 Windows command syntax:
 
@@ -90,11 +106,15 @@ $ python3 main.py
 >
 >    * If it is your first time programming I recommend VScode as a text editor you can get it here: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-*Current Python Version at the time of writting: Python3.12.4*
+*Current Stable Python Version at the time of writting: Python 3.12.5*
 
 <br>
 
----
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+
 # `Single/Multi-Line Comments`
 
 Comments are a way for programmers to make notes about thier code.
@@ -146,23 +166,27 @@ Use Ctrl + / in editors like VScode to make a quick multi-line comment, or to co
 
 <br>
 
----
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+
+
 # `First Program: Console Output`
+To build your first program use the built-in ***print( )*** function call to send output to console (called standard output or stdout)
 
-> * To build your first program use the built-in ***print( )*** function call to send output to console (called standard output or stdout)
+<br>
 
- 
-
-
-Here we will print out "Hello World".   
-Literal text must be written in quotes, and is called a string. 
+> Here we will print out "Hello World".   
+> Literal text must be written in quotes, and is called a string. 
 
 
 ```python
 "Hello World"
 ```
+<br>
 
-To print out this text we use the built-in function call ***print( )*** with the argument "Hello World"
+> To print out this text we use the built-in function call ***print( )*** with the argument "Hello World"
 
 
 ```python
@@ -171,33 +195,39 @@ print("Hello World")
 
 <br>
 
----
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+
+
 # `First Program: User Input`
+To handle input from a user (called standard input or stdin), use the built-in function call ***input( )***.***input( )*** stops the execution of the program, and waits for the user to type in some text, it then returns the text that was entered.
 
+*Note:*  
+> When a function like ***input( )*** 'returns' it brings a value back to that point in the program in which the function was called.
+> * The caller "*input( )*" then represents the value it returns.
 
-> * To handle input from a user (called standard input or stdin), use the built-in function call ***input( )***.
+<br>
 
-> * ***input( )*** stops the execution of the program, and waits for the user to type in some text, it then returns the text that was entered.
-
-*Note: returning will show up alot in programming, when something "returns" it brings a value back to that point in the program where it can be used*
-
-Here we will print out whatever the user, in this case you types when prompted for input.  
-We will begin by calling the built-in ***input( )*** function call.
+Here we will print out whatever the user, in this case you, types when prompted for input.  
+> We will begin by calling the built-in ***input( )*** function call.
 
 
 ```python
 input()
 ```
 
-Placing a string argument inside of the ***input( )*** function call prints out a prompt to tell the user what input to provide.
+<br>
 
+> Placing a string argument inside of the ***input( )*** function call prints out a prompt to tell the user what input to provide.
 
 ```python
 input("Type your input: ")
 ```
+<br>
 
-If you place the ***input()*** function call inside of the ***print()*** function call the user input will be output back to the console.
-
+> If you place the ***input()*** function call inside of the ***print()*** function call the user input will be output back to the console.
 
 ```python
 print(input("Type your input: "))
@@ -205,29 +235,45 @@ print(input("Type your input: "))
 
 <br>
 
----
-
-# `Executing a Python Program`
-
-**Congrats you have written your first python program! Now, how do you get the computer to run this 'code'?**
-
-> * What you have just written is called scource code. Scource code refers to the human-readable set of instructions and statements written by a programmer using a programming language.  
-> * While it may not seem like it the code that you have just written is not actually readable by the computer.   
-> * We will need another program to translate this high-level scource code into another form of code that the computer can understand.   
->
-> * For python this program is the python interpreter.   
-  
-
-
-
-|Scource Code|\>\>\>|Byte Code|\>\>\>|Machine Code|\>\>\>|Result|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|text|Python Interpreter|Bytes|Python Virtual Machine|Binary|CPU|
-|stored in .py file|python.exe (Windows)python3 (Linux/MacOS)|stored in a .pyc file inside of the \_\_pycache\_\_ directory. Is platform independent|PVM|Is platform dependent||Output|  
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
 
 <br>
 
 
+
+# `Executing a Python Program`
+
+Congrats you have written your first python program! Now, how do you get the computer to run this 'code'?
+
+## `How Python Source Code is executed`
+> * What you have just written is called scource code. Scource code refers to the human-readable set of instructions and statements written by a programmer using a programming language.  
+> * While it may not seem like it the code that you have just written is not actually readable by the computer.   
+> * We will need another program to translate this high-level scource code into another form of code that the computer can understand.   
+> 
+> * For python this program is the python interpreter.  
+>   * Windows: python.exe
+>   * Mac/Linux: python3 
+
+<br>
+
+![Scource Code Execution](../img/code-execution.svg)
+
+*Having trouble viewing on Github? Try Right-Clicking on the image and selecting "Open image in a new tab"*
+
+
+||||||||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Scource Code|-->|Byte Code|-->|Machine Code|-->|Result|
+||||||||  
+|text|Python Interpreter|Bytes|Python Virtual Machine|Binary|CPU|
+||||||||  
+|stored in .py file|python.exe (Windows)python3 (Linux/MacOS)|stored in a .pyc file inside of the \_\_pycache\_\_ directory. <br>Is platform independent|PVM|Is platform dependent||Output|
+||||||||  
+
+*Python source code is written in text form and stored in a .py file. When this code is executed, it passes to the Python interpreter (python.exe on Windows or python3 on Linux/MacOS), which converts the source code into bytecode. The bytecode is stored in a .pyc file inside the __pycache__ directory and is platform-independent at this stage. The Python Virtual Machine (PVM) then interprets this bytecode and translates it into machine code, which is platform-dependent. Finally, the machine code is processed by the CPU to generate the output.*
+
+<br>
 
 > * Scource code like this is compiled into byte code by the python interpreter.  
 >   * Windows: python.exe
@@ -235,27 +281,51 @@ print(input("Type your input: "))
 
 > * Then the python virtual machine PVM converts the bytecode into machinecode and the CPU  executes the instructions one by one.
 
+<br>
 
-To execute your own Python program invoke the interpreter through the command line or python shell and provide your filename as an argument. Then hit ENTER.  
-Syntax:
+## `Executing Your Program`
+To execute your own Python program:
+1. Invoke the interpreter through the command line or python shell and provide your filename as an argument.  
+2. Hit ENTER
+
+> Windows Syntax:
 ```
 > python <filename>
 ```
-```
-$ python3 <filename>
-```
-
-Examples:
+> Windows Example:
 ```  
 > python main.py 
 ```
+<br>
+
+> Linux/MacOS Syntax:
+```
+$ python3 <filename>
+```
+> Linux/MacOS Example:
 ``` 
 $ python3 main.py
 ```
 
-*NOTE: > for Windows, and $ for Linux/MacOS. These symbols should be omitted when typing the command on your computer.*  
-*NOTE: If you are experiencing issued with using the python or python3 commands, make sure that the executable has been added to the system path*
+<br>
 
+*NOTE*: 
+> * '>' for Windows, and '$' for Linux/MacOS are used to represent the command prompt. 
+>    * These symbols should be omitted when typing the command on your computer.
+> * If you are experiencing issues with using the 'python' or 'python3' commands, make sure that the executable has been added to the system path*
+
+
+<br>
+
+
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+
+
+# `Python Installation Path`
+You have installed Python, but where can you find it?
 
 <br>
 
@@ -264,21 +334,25 @@ Python is installed by default here on Windows depending on the version installe
     
     C:\Program Files\Python3xx  
     
-&nbsp;&nbsp;&nbsp;&nbsp;*where xx indicates the installed version*   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*where xx indicates the installed version*   
+
 <br>
 
 Python may also be installed here for a specific user: 
 
     C:\Users\USER\AppData\Local\Programs\Python\Python3xx
+
 <br>
     
 To check the current version type the following on the command line interface
 
     > python --version
+
 <br>
 To execute .py files on windows type the following on the command line interface
 
     > python <filename>
+
 <br>
 
 ## `Python On Linux or MacOS`
@@ -286,22 +360,31 @@ To execute .py files on windows type the following on the command line interface
 Python is installed by default here on Linux/MacOS depending on the version installed. 
    
     /usr/bin/python3
+
 <br>    
+
 To check the current version type the following on the command line interface
 
     $ python3 --version
-<br>     
+
+<br>   
+
 To execute .py files on linux and Mac type the following on the command line interface
 
     $ python3 filename.py
+
+<br>
+
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
 <br>
 
 # `You are Experiencing an Error!`
----
 Oh no... you have done something incorrect and are now experiencing an error. 
 Not to worry as a human you are prone to many errors, that we machines don't make.
 
-To make it easier for you to correct your many PEBKAC and ID 10 T Errors, these errors can be categorized into 3 categories:
+> To make it easier for you to correct your many PEBKAC and ID 10 T Errors, these errors can be categorized into 3 categories:
 
 |Error|Description|
 |:-:|:-|
@@ -309,22 +392,24 @@ To make it easier for you to correct your many PEBKAC and ID 10 T Errors, these 
 |Runtime Errors|occur after the program has been successfully compiled and started execution. They usually result from operations that are not possible to perform.|
 |Logical Errors|occur when a program runs without crashing but produces incorrect results. These errors are caused by mistakes in the program's logic, meaning the code does not behave as intended.|
 
-
-
-
-*Note: PEBKAC Errors are raised when the Problem Exists Between the Keyboard and Chair.*  
-*Note: ID 10 T Errors are raised when the issue is caused by the user.* 
+*Note*:
+> * PEBKAC Errors are raised when the Problem Exists Between the Keyboard and Chair.
+> * ID 10 T Errors are raised when the issue is caused by the user. 
 
 <br>
 
-### `Syntax/Compile Time Errors`
-* > Are typically the easiest errors to fix, and the most common one you humans make. 
+# `Syntax/Compile Time Errors`
+Syntax/Compile Time errors are typically the easiest errors to fix, and the most common one you humans make. 
 
-**What to do to fix a Syntax/Compile Time Error?**
-# STEP ONE: READ THE ERROR OUTPUT!
-* You are looking for two things: a line number, and the specific error info. 
+<br>
 
+## Fixing Syntax/Compile Time Errors
+`STEP ONE: READ THE ERROR OUTPUT!`
+- You are looking for two things: a line number, and the specific error info.
 
+<br>
+
+Example:
 ```python
 #lets make a simple Syntax/Compile Time Error
 Print("Hello World")
@@ -344,16 +429,24 @@ Print("Hello World")
 
 <br>
 
-# `Runtime Errors`
----
-> * are the second most common errors you humans make
-> * Occur when your code is syntatically correct, but you have performed and operation that cannot be performed.
+# `
+[Back to Top](#introduction-to-python-comments-and-hello-world)Runtime Errors`
+___
 
-**What to do to fix a Runtime Error?**
-# STEP ONE: READ THE ERROR OUTPUT!
+<br>
+
+
+Runtime Errors are the second most common errors you humans make.  
+
+Runtime Errors occur when your code is syntatically correct, but you have performed and operation that cannot be performed.
+
+<br>
+
+## Fixing Runtime Errors
+`STEP ONE: READ THE ERROR OUTPUT!`
 * You are looking for two things: a line number, and the specific error info. 
 
-
+Example:
 ```python
 #Let's make a simple Runtime Error
 print(5 / 0)
@@ -371,7 +464,7 @@ print(5 / 0)
 # What did I do wrong?
 ```
 
-
+Example:
 ```python
 #Let's make a simple Runtime Error this is a little more advanced: see lists for more info
 
@@ -393,17 +486,24 @@ print(my_list[3])
 
 <br>
 
----
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+
+
 
 # `Logical Errors`
+Logical Errors tend to occur with lesser frequency than runtime or compile time errors, but are the hardest to track down.
 
-> * are the least common errors you humans make, but the hardest to track down
-> * Occur when your code is syntatically correct and all operations are possible, but your code isn't doing what you expect it to do. 
+Logical Errors occur when your code is syntatically correct and all operations are possible, but your code isn't doing what you expect it to do. 
 
-**What to do to fix a Runtime Error?**  
-**STEP ONE: Debugging!**
+<br>
+
+### Fixing Logical Errors  
+`STEP ONE: Debugging!`
 * This will be harder than Syntax or Runtime Errors, because you will not get any help from the computer in tracking down the error.
-* Learning to use a debugging tool will be the most useful to you, but beginners usually start with print() debugging.
+* Learning to use a debugging tool will be the most useful to you, but beginners usually start with print( ) debugging.
 
 <br>
 
@@ -499,6 +599,8 @@ print(area) # Output: 10
 We are getting 10 for the area... What is the issue here? There are no syntax errors and no runtime errors.
 We need more information, but can't see the calculated value of width. 
 
+<br>
+
 We will use print debugging to help us here, add a print() statement to the code right after the width calculation that shows the value width stores.
 
 
@@ -514,6 +616,8 @@ print(area) # Output: 10
 
 The width should be calculated as 2.5, but instead we get 2. So we now know the error is with how we calculate the width value.
 
+<br>
+
 After some research we find that we used the wrong operator to divide.   
 Instead of // we should have used / in line 2.
 
@@ -527,5 +631,15 @@ area = length * width
 print(area) # Output: 12.5
 ```
 
----
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+
+
+[Back to Top](#introduction-to-python-comments-and-hello-world)
+___
+
+<br>
+*Created and maintained by Mr. Merritt* 
     
