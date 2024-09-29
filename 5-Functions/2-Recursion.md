@@ -1,25 +1,26 @@
+# `Python Recursion`
 *Use CTRL + F to search for keywords in this file*  
 *You are encouraged to copy and alter the code in this file to understand how it works*
 
-# `Recursion`
+
+___
 
 Covered in this file:
-1. Recursion Defined
-2. Writing a base case
-3. RunTime Error: RecursionError: maximum recursion depth exceeded
-4. Common Recursive Algorithms
->   1. Factorial Calculation  
->   2. Fibonacci Sequence  
->   3. Binary Search  
->   4. Merge Sort  
->   5. Quick Sort  
->   6. Tower of Hanoi  
->   7. Permutations  
->   8. Combinations  
->   9. Depth-First Seach  
->   10. Breadth-First Search  
 
-
+1. [`Note on symbols used in this file`](#note-on-symbols-used-in-this-file)
+1. [`Recursion Defined`](#recursion-defined)
+1. [`Writing a base case`](#writing-a-base-case)
+1. [`RecursionError: maximum recursion depth exceeded`](#recursionerror-maximum-recursion-depth-exceeded)
+1. [`Common Recursive Algorithms`](#common-recursive-algorithms)
+    1. [`Factorial Calculation`](#factorial-calculation)
+    1. [`Fibonacci Sequence`](#fibonacci-sequence)
+    1. [`Binary Search`](#binary-search)
+    1. [`Merge Sort`](#merge-sort)
+    1. [`Quick Sort`](#quick-sort)
+    1. [`Permutations`](#permutations)
+    1. [`Combinations`](#combinations)
+    1. [`Depth First Search`](#depth-first-search)
+    1. [`Breadth-First Search`](#breadth-first-search)
 
 <br>
 
@@ -61,12 +62,24 @@ Symbols appearing in python blocks should be treated as Python syntax.
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ### `Abstract vs. Real Examples`
 In this file there are two types of examples, `abstract` and `real`. 
 
 `Abstract` examples are a generalized, simplified representation that highlights the core concept or principle without including unnecessary details or specific instances. 
 
 `Real` Examples are specific instances that illustrate the concept, principle, or method by providing concrete details. 
+
+<br>
+
+[Back to Top](#python-recursion)
+
+___
 
 <br>
 
@@ -88,6 +101,8 @@ Recursive algorithms are made of 3 parts:
 
 *When a function executes the program stops at that point and executes the function code. When a recursive function is called this process may occur many times, until the final call meets the base case and returns. This results in the previous call returning, then the next, and so on until the original call returns. This is because each function call is placed on the stack along with its data, until it ends.*
 
+<br>
+
 syntax:
 ```
 def recursive_function(parameters, ...):
@@ -97,11 +112,12 @@ def recursive_function(parameters, ...):
     ...
 ```
 
+<br>
+
 abstract example:
 ```python
-
 def recurse(n):
-    if (n >= 1):
+    if (n <= 1):
         print("Base Case Executed...")
         return
 
@@ -117,7 +133,13 @@ recurse(5)
 # Base Case Executed: n = 1
 ```
 
-*NOTE: The best way to visualize how recursive algorithms work is to use a debugging tool to step through the code execution.*
+*The best way to visualize how recursive algorithms work is to use a debugging tool to step through the code execution.*
+
+<br>
+
+[Back to Top](#python-recursion)
+
+___
 
 <br>
 
@@ -149,18 +171,28 @@ recurse(5)
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 # `RecursionError: maximum recursion depth exceeded`
 `RecursionError: maximum recursion depth execeeded` is a type of error that  typically occurs when a recursive function is called indefinitely or simply when the number of recursive calls is too large.
-* This error is often the result of a non-existant base case or a base case that is never met. 
+* This error is often the result of a non-existant base case or a base case that is never met.
 
-When a recursive call occurs, the state of the function is held in memory as a new call occurs. This means that each time a function calls itself, a new stack frame is created on the call stack to store the state of that function call. 
+<br>
 
-This stack frame includes information such as:
-* The function’s return address (where the program should return after the function call completes).
-* The parameters passed to the function.
-* The local variables of the function.  
+*When a recursive call occurs, the state of the function is held in memory as a new call occurs. This means that each time a function calls itself, a new stack frame is created on the call stack to store the state of that function call.* 
 
-As each recursive call adds a new frame to the stack, the memory allocated for the stack increases. If the recursion is too deep (i.e., the function calls itself too many times without reaching a base case), the call stack will eventually exceed the memory limit allocated to it. This is because each function call requires additional stack space, and the operating system limits the size of the stack to prevent programs from using too much memory.
+*This stack frame includes information such as:*
+* *The function’s return address (where the program should return after the function call completes).*
+* *The parameters passed to the function.*
+* *The local variables of the function.*  
+
+*As each recursive call adds a new frame to the stack, the memory allocated for the stack increases. If the recursion is too deep (i.e., the function calls itself too many times without reaching a base case), the call stack will eventually exceed the memory limit allocated to it. This is because each function call requires additional stack space, and the operating system limits the size of the stack to prevent programs from using too much memory.*
+
+<br>
 
 abstract example:
 ```python
@@ -197,20 +229,26 @@ recurse(5)
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 # `Common Recursive Algorithms`
 
 ## `Factorial Calculation ` 
-> The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n. 
-> This is the most common example used when teaching Recursion as the algorithm is simple to understand.
+The factorial of a non-negative integer n, denoted as n!, is the product of all positive integers less than or equal to n. 
+* This is the most common example used when teaching Recursion as the algorithm is simple to understand.
 
-Example 5! --> 5 * 4 * 3 * 2 * 1 == 125
+Example `5! --> 5 * 4 * 3 * 2 * 1 == 125`
 
 ```python
 def factorial(n):
-    if n <= 0:
+    if n <= 0:      # base case
         return 1
     
-    return n * factorial(n-1)
+    return n * factorial(n-1) # recursive calleeeee
 
 
 factorial(5) # Returns 125
@@ -218,30 +256,39 @@ factorial(5) # Returns 125
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Fibonacci Sequence ` 
-> Fibonacci sequence is a series of numbers in which each number (Fibonacci number) is the sum of the two preceding ones, usually starting with 0 and 1.
+A Fibonacci sequence is a series of numbers in which each number (Fibonacci number) is the sum of the two preceding ones, usually starting with 0 and 1.
 
 ```python
 def fibonacci(n):
-    '''Returns the nth number in a fibonacci sequence'''
-    a, b = 0, 1
-    for _ in range(n):
-        a, b = b, a + b
-    return a
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    return fibonacci(n-1) + fibonacci(n-2)
 
 
-
-
-for i in range(10):
-    print(fibonacci(i), end=" ")
-# Output: 0 1 1 2 3 5 8 13 21 34
+print(fibonacci(10))
 ```
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Binary Search `
-> Binary search is an algorithm that works by repeatedly dividing the search interval in half, thereby reducing the search space exponentially with each iteration or recursion.
-> It only works on sorted collections.
+Binary search is an algorithm that works by repeatedly dividing the search interval in half, thereby reducing the search space exponentially with each iteration or recursion.
+* It only works on sorted collections.
 
 Steps to Binary Search:
 * Check if the target value is equal to the middle element, if it is return that index
@@ -278,8 +325,14 @@ print(result)  # Output: 3
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Merge Sort ` 
-> Merge Sort works by recursively dividing the array into two halves, sorting each half, and then merging the sorted halves to produce the sorted array.
+Merge Sort works by recursively dividing the array into two halves, sorting each half, and then merging the sorted halves to produce the sorted array.
 
 Steps of Merge Sort
 * Divide the unsorted array into two approximately equal halves.
@@ -331,9 +384,15 @@ print(arr)  # Output: [3, 9, 10, 27, 38, 43, 82]
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 
 ## `Quick Sort `
-> Quick Sort works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. The process is then recursively applied to the sub-arrays.
+`Quick Sort` works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. The process is then recursively applied to the sub-arrays.
 
 Steps for Quick Sort:
 1. Choose a Pivot: Select an element from the array to act as the pivot.
@@ -370,10 +429,19 @@ print(arr)                                          # Output: [1, 5, 7, 8, 9, 10
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Permutations ` 
-> A permutation of a set is a specific arrangement or ordering of its elements.
+A `permutation` of a set is a specific arrangement or ordering of its elements.
 
 The number of permutations of n distinct items is given by n! (n factorial)
+```
+n!
+```
 The number of permutations of n items with only r items selected and arranged is: 
 
     P(n,r) = n! / (n-r)!
@@ -399,11 +467,19 @@ print(permutations(arr))  # Output: [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1],
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Combinations ` 
-> A combination is a way of selecting items from a larger set without regard to the order of the items.
+A `combination` is a way of selecting items from a larger set without regard to the order of the items.
 
 The number of combinations of n items taken r at a time is give by:
+```
 C(n,r) = n! / (r!(n-r)!)
+```
 
 ```python
 def combinations(arr, r):
@@ -428,8 +504,14 @@ print(combinations(arr, 2))  # Output: [[1, 2], [1, 3], [2, 3]]
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Depth-First Search` 
-> Depth-First Search (DFS) is a fundamental graph traversal algorithm used to explore nodes and edges of a graph. It starts from a given node and explores as far down a branch as possible before backtracking. 
+`Depth-First Search (DFS)` is a fundamental graph traversal algorithm used to explore nodes and edges of a graph. It starts from a given node and explores as far down a branch as possible before backtracking. 
 
 Steps of DFS:
 * Start at the Root: Begin traversal from a starting node (or root node).
@@ -462,8 +544,14 @@ dfs_recursive(graph, 'A', visited)
 
 <br>
 
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
 ## `Breadth-First Search` 
-> Breadth-First Search (BFS) is a fundamental graph traversal algorithm used to explore nodes and edges of a graph. Unlike Depth-First Search (DFS), which explores as far down a branch as possible, BFS explores all nodes at the present depth level before moving on to nodes at the next depth level.
+`Breadth-First Search (BFS)` is a fundamental graph traversal algorithm used to explore nodes and edges of a graph. Unlike Depth-First Search (DFS), which explores as far down a branch as possible, BFS explores all nodes at the present depth level before moving on to nodes at the next depth level.
 
 
 Steps of BFS
@@ -509,6 +597,16 @@ graph = {
 }
 bfs(graph, 'A')
 ```
+
+<br>
+
+[Back to Top](#python-recursion)
+
+___
+
+<br>
+
+*Created and maintained by Mr. Merritt*
 
 
 
