@@ -1,6 +1,35 @@
+*WORK IN PROGRESS, CHECK BACK LATER FOR UPDATES*
+# `Python math Module`
+*Use CTRL + F to search for keywords in this file*  
+*You are encouraged to copy and alter the code in this file to understand how it works*
+___
+
+Covered in this file:
+1. [``]()
+
+
+<br>
+
+___
+
+<br>
+
+# ``
+
+
+<br>
+
+[Back To Top](#python-math-module)
+
+___
+
+<br>
+
+*Created and maintained by Mr. Merritt*
+
 Not an exhaustive list see: https://docs.python.org/3/library/math.html
 
-
+```python
 import math #importing the builtin math module.
 
 # Constants
@@ -47,14 +76,4 @@ math.erf(0.5)            # Error function at x
 math.erfc(0.5)           # Complementary error function at x
 math.gamma(5)            # Gamma function at x
 math.lgamma(5)           # Natural logarithm of the absolute value of the gamma function at x
-
-
-
-
-
-
-
-
-
-
-
+```
