@@ -37,7 +37,7 @@ ___
 # `Defining a Variable`
 Basically: `variables` are like containers that store literal data 
 
-Specifically: `variables` are pointers that reference a location in memory where the literal data is stored
+Specifically: `variables` are pointers that reference a location in memory where the literal data is physically stored
 > * The data a variable points to can change
 
 <br>
@@ -120,7 +120,7 @@ a = b = c = 1
 ## `Assigning Multiple Variables on the same line`
 There are two ways to assign multiple variabes on the same line.
 
-> * perform multiple assignment statements seperated with a **;**
+> * perform multiple assignment statements seperated with a `;`
 
 
 ```python
@@ -128,7 +128,7 @@ f = 2; g = 3; h = 4
 ```
 
 OR
-> * assign multiple variables seperated with a **,** to multiple values seperated with a **,**
+> * assign multiple variables seperated with a `,` to multiple values seperated with a `,`
 
 
 ```python

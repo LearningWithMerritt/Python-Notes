@@ -1,0 +1,1 @@
+This file is placed here to illustrate the structure of Modules, Packages, Libraries within Python, however Modules are covered in [6-Objects-and-Classes/5-Modules.md](../../../6-Objects-and-Classes/5-Modules.md) to show the heirarchy of source code being stored in modules. 
