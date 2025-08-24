@@ -1,14 +1,17 @@
 # `Python Operators`
 *Use CTRL + F to search for keywords in this file*  
 *You are encouraged to copy and alter the code in this file to understand how it works*
+
+[Python Documentation](https://docs.python.org/3/)
 ___
 
 Covered in this file:
+1. [`Operators, Operands, and Precedence`](#operators-operands-and-precedence)
+    1. [`Complete Operator Precedence`](#complete-operator-precedence)
+    1. [`Expressions`](#expressions)
 1. [`Concatenation`](#concatenation)
 1. [`Duplication`](#duplication)
 1. [`Casting (changing data type)`](#casting-changing-data-type)
-1. [`Operators, Operands, and Precedence`](#operators-operands-and-precedence)
-    1. [`Complete Operator Precedence`](#complete-operator-precedence)
 1. [`Arithmetic operators (math)`](#arithmetic-operators-math)
 1. [`Comparison aka Relational Operators`](#comparision-aka-relational-operators)
 1. [`Membership operators`](#membership-operators)
@@ -40,6 +43,151 @@ ___
 
 <br>
 
+# `Operators Operands and Precedence`
+
+`Operators` are the symbols used to perform operations on `operands`.
+
+`Operands` are the values or variables that operators operate on. 
+
+example:
+
+    a + b
+
+* Operator: `+`
+* Operands: `a` and `b`
+
+<br>
+
+##  `Complete Operator Precedence`
+
+`Operator precedence` refers to the rules that determine the order in which operators are evaluated in an expression. 
+
+Below is the complete operator precendance for Python.
+* From top to bottom: Top is highest precedence.
+
+`Associativity` defines the order in which operators of the same precedence level are evaluated when they appear next to each other in an expression.
+* Operations at the same level proceed from left to right in the expression.
+
+|Operators|Description|
+|:-:|:-|
+| `()`          | Parentheses                     |
+| `**`          | Exponentiation                  |
+| `+x` `-x` `~x`    | Unary plus, unary minus, and bitwise NOT |
+| `*` `/` `//` `%`    | Multiplication, division, floor division, and modulus |
+| `+` `-`         | Addition and subtraction        |
+| `<<` `>>`       | Bitwise left and right shifts   |
+| `&`           | Bitwise AND                     |
+| `^`           | Bitwise XOR                     |
+| `\|`          | Bitwise OR                      |
+| `==` `!=` `>` `>=` `<` `<=` | Comparisons             |
+| `is`, `is not`      | Identity                        |
+| `in`, `not in`   | Membership operators            |
+| `not`         | Logical NOT                     |
+| `and `        | Logical AND                     |
+| `or`          | Logical OR                      |
+
+*NOTE*:   
+> *If you have trouble remembering operation precedence remember that you can always use parenthesis to make your code clear*
+
+<br>
+
+## `Expressions`
+--- 
+
+Basically: An `expression` is a statement with a result or answer.
+
+Specifically: An `expression` is a combination of data, variables, and operations that is evaluated to produce a single value aka result or answer.
+
+examples:
+# Comprehensive Python Expressions (From Simple to Complex)
+
+1. Literal Expressions (no variables)
+
+```python
+42                  # integer literal evaluates to itself
+3.14                # float literal evaluates to itself 
+'Hello'             # string literal evaluates to itself
+True                # boolean literal evaluates to itself
+```
+
+2. Variable-Only Expressions
+
+```python
+x                   # evaluates to the value of x
+name                # evaluates to the value of name
+```
+
+3. Arithmetic Expressions
+
+```python
+a + b               # addition
+a - 3               # subtraction with a literal
+a * b + 2           # combined operations
+(a + b) / c         # using parentheses to control order
+```
+
+4. Comparison Expressions
+
+```python
+a > b               # greater than
+a == 10             # equality with a literal
+b != c              # inequality
+(a + b) >= (c - 2)  # comparison with arithmetic
+```
+
+5. Logical Expressions
+
+```python
+a > b and c < d             # logical AND
+a == 10 or b == 5           # logical OR
+not (a < b)                 # logical NOT
+(a > b) and not (c == d)    # nested logic
+```
+
+6. Membership and Identity Expressions
+
+```python
+'x' in 'text'               # membership in a string
+5 in [1, 2, 3, 4, 5]        # membership in a list
+a is b                      # identity comparison
+a is not None               # checking if a is not None
+```
+
+7. Expressions with Lists, Dictionaries, or Tuples
+
+```python
+len(my_list)               # function call with variable
+my_dict['key']             # dictionary lookup
+my_tuple[1] + 5            # tuple access and arithmetic
+sum([a, b, c]) > 20        # list function with comparison
+```
+
+8. Expressions with Functions and Nesting
+
+```python
+max(a, b) + min(c, d)              # nested function calls
+abs(a - b) > pow(c, 2)             # function and comparison
+sorted([a, b, c])[0] == a          # list sort and comparison
+type(a) == int and isinstance(b, float)  # type checks
+```
+
+9. Ternary and Complex Conditional Expressions
+
+```python
+'yes' if a > b else 'no'           # ternary expression
+(a if a > b else b) + c            # ternary inside arithmetic
+(True if x in my_list else False) and (y == 3)  # mixed logic
+```
+
+
+<br>
+
+[Back to Top](#python-operators)
+
+___
+
+<br>
+
 # `Concatenation`
 Basically: `concatenation` means "to join"
 
@@ -54,16 +202,16 @@ example:
 ```python
 # Concatenating strings
 "Hello" + "World"
-#Result: Hello World
+#Result: HelloWorld
 
 print("Hello" + "World")
-#Output: Hello World
+#Output: HelloWorld
 
 #Using Variables
 first = "Hello"
 second = "World"
 print(first + second)
-#Output: Hello World
+#Output: HelloWorld
 ```
 
 
@@ -288,57 +436,6 @@ ___
 
 <br>
 
-# `Operators Operands and Precedence`
-
-`Operators` are the symbols used to perform operations on `operands`.
-
-`Operands` are the values or variables that operators operate on. 
-
-example:
-
-    a + b
-
-* Operator: `+`
-* Operands: `a` and `b`
-
-<br>
-
-##  `Complete Operator Precedence`
-
-`Operator precedence` refers to the rules that determine the order in which operators are evaluated in an expression. 
-
-Below is the complete operator precendance for Python.
-* From top to bottom: Top is highest precedence.
-* Operations at the same level proceed from left to right in the expression.
-
-|Operators|Description|
-|:-:|:-|
-| `()`          | Parentheses                     |
-| `**`          | Exponentiation                  |
-| `+x` `-x` `~x`    | Unary plus, unary minus, and bitwise NOT |
-| `*` `/` `//` `%`    | Multiplication, division, floor division, and modulus |
-| `+` `-`         | Addition and subtraction        |
-| `<<` `>>`       | Bitwise left and right shifts   |
-| `&`           | Bitwise AND                     |
-| `^`           | Bitwise XOR                     |
-| `\|`          | Bitwise OR                      |
-| `==` `!=` `>` `>=` `<` `<=` | Comparisons             |
-| `is`, `is not`      | Identity                        |
-| `in`, `not in`   | Membership operators            |
-| `not`         | Logical NOT                     |
-| `and `        | Logical AND                     |
-| `or`          | Logical OR                      |
-
-*NOTE*:   
-> *If you have trouble remembering operation precedence remember that you can always use parenthesis to make your code clear*
-
-<br>
-
-[Back to Top](#python-operators)
-
-___
-
-<br>
 
 # `Arithmetic Operators (Math)`
 Arithmetic operations are used to perform arithmetic.
@@ -715,19 +812,27 @@ Order of Operations
 * AND
 * OR
     
-|Operator| Operation| Description|
-|:------:|:--------:|:-----------|
-| `not`    | NOT      | opposite   |
-| `and`    | AND      | both       |
-| `or`     | OR       | at least one |
+| Operator | Operation |  Logic Name | Description               |
+| :------: | :-------: | :---------: | :------------------------ |
+|   `not`  |    NOT    |   Negation  | `Opposite` of the condition |
+|   `and`  |    AND    | Conjunction | `Both` must be true         |
+|   `or`   |     OR    | Disjunction | `At least one` must be true |
 
-`Truth Tables` are used to illustrate the evaluation of a logical expression. In this case they show how we evaluate, `not`, `and`, and `or`.  
+
+`Truth Tables` are used to illustrate the evaluation of a logical expression. 
+* In this case they show how we evaluate, `not`, `and`, and `or`.  
 
 <br>
 
 ## `NOT truth table`
 NOT is a negation operation
-> * `not` returns the opposite
+* `not` returns the opposite
+
+<br>
+
+### *`evaluates opposite`*
+
+<br>
 
 
 |a|NOT a|
@@ -757,9 +862,13 @@ not is_sunny and is_raining # Returns: True
 
 ## `AND truth table`
 AND is a conjunction operation.
-> * `and` returns True when both operands are True  
+* `and` returns True when both operands are True  
 
-*both must be True to evaluate True*
+<br>
+
+### *`both must be True to evaluate True`*
+
+<br>
 
 |a|b|a AND b|
 |:-:|:-:|:-:|
@@ -809,9 +918,9 @@ age >= 18 and has_license
 
 ## `OR truth table`
 OR is a disjuntion operation.
-> * or returns True when at least one operand is True
+* or returns True when at least one operand is True
 
-*at least one must be True to evaluate True*
+### *`at least one must be True to evaluate True`*
 
 |a|b|a OR b|
 |:-:|:-:|:-:|
@@ -863,6 +972,9 @@ ___
 
 <br>
 
+### Law 1
+The negation (NOT) of a conjunction (AND) is the disjunction (OR) of the negations.
+
 |This|Same As|
 |:-:|:-:|
 |not(a and b)|(not a or not b)|
@@ -882,6 +994,9 @@ not(a and b) == (not a or not b)  # Returns: True
 ```
 
 <br>
+
+### Law 2
+The negation (NOT) of a disjunction (OR) is the conjunction (AND) of the negations.
 
 |This|Same As|
 |:-:|:-:|
@@ -1109,7 +1224,7 @@ not 0   #Returns: 1
 
 <br>
 
-### Left Shift
+### Left Shift <<
 > * equivalent to (x * 2**shift_amount)
 
 
@@ -1123,7 +1238,7 @@ print( x << 3) #8 --> 0b1000
 
 <br>
 
-### Right Shift
+### Right Shift >>
 > * equivalent to (x / 2** shift_amount)
 
 

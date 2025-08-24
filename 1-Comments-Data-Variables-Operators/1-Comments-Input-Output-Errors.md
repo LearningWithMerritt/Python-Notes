@@ -5,7 +5,8 @@ ___
 
 Covered in this file:
 1. [`Introduction to the Python Programming Language`](#an-introduction-to-the-python-programming-language)
-1. [`Single/Multi Line Comments`](#singlemulti-line-comments)
+1. [`What is a program?`](#what-is-a-program)
+1. [`Comments and Documentation`](#comments-and-documentation)
     1. [`Single-line comments`](#single-line-comments)
     1. [`Multi-line comments`](#multi-line-comments-docstrings)
 1. [`First Program: Console Output`](#first-program-console-output)
@@ -23,7 +24,7 @@ Covered in this file:
         1. [`Fixing Runtime Errors`](#fixing-runtime-errors)
     1. [`Logical Errors`](#logical-errors)
         1. [`Fixing Logical Errors`](#fixing-logical-errors)
-
+1. [`Debugging`](#debugging)
 <br>
 
 ___
@@ -61,57 +62,6 @@ The current python version and documentation can be found here: [https://www.pyt
 To install python on your computer start here: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 
-> * Python files have the (.py) extension.   
-> * The python interpreter is invoked using the 'python' command on Windows  
->
-> * The python interpreter is invoked using the 'python3' command on UNIX like systems (Linux, Mac) 
-
-> * The interpreter can be invoked interactively allowing you to write and execute line by line. 
-
-<br>
-
-Windows command syntax 
-> '>' represents the terminal prompt and can be omitted:
-
-    > python
-
-Linux/MacOS command syntax 
-> '$' represents the terminal prompt and can be omitted:
-
-    $ python3
-
-<br>
-
-> * The interpreter can be invoked and provided a filepath argument in order to interpret code written in a text file (.py)  
-
-Windows command syntax:
-
-    > python <filepath>
-
-Linux/MacOS command syntax:
-
-    $ python3 <filepath>
-
-Examples:
-```
-> python main.py  
-```
-```
-$ python3 main.py
-```
-
-<br>
-
-*NOTE*: 
-> * <> angle brackets indicate a variable part of the command. For example: \<filepath> indicates any filepath  
-> * For simplicity commands with a leading `>` should be understood as Windows Commands unless otherwise specified 
-> * For simplicity commands with leading `$` should be understood to be Linux/MacOS commands unless otherwise specified  
-
-
-<br>
-
-Now that you have the basics, create a new file that ends in .py, open it in your favorite text editor and let's begin learning about the Python Programming Language.
-> * If it is your first time programming I recommend VScode as a text editor you can get it here: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 *Current Stable Python Version at the time of writting: Python 3.12.5*
 
@@ -122,13 +72,128 @@ ___
 
 <br>
 
-# `Single/Multi-Line Comments`
+# `What is a program?`
+A `program` is a set of instructions written in a programming language that a computer can execute to perform a specific task or solve a problem.
 
-Comments are a way for programmers to make notes about thier code.
-1. Comments are not interpreted as code and are simply ignored by the interpreter.
-1. The best programmers write easy to read and well documented (commented) code.
-1. Comments can be used to prevent code from being executed without deleting that code. 
 
+Regardless of the language used, programs have these things in common:
+| **Part**                  | **Description**                                                                 |
+|---------------------------|---------------------------------------------------------------------------------|
+| `Input`                 | Receives data for processing (e.g., from user, file, or device).               |
+| `Processing`            | Performs operations on the input to generate results.                         |
+| `Output`                | Delivers results (e.g., prints to screen, saves to a file).                   |
+
+<br>
+
+As a programmer your job is to determine:
+* What input does the program need and how to recieve that input?
+* How will the input be processed to produce a result?
+* How will the result be delivered and as what type of output?
+
+---
+
+<br>
+
+## `Source Code`
+
+`Source code` refers to the human-readable set of instructions and statements written by a programmer using a programming language. 
+
+ <br>
+
+In Python:
+1. Source code is written inside of files with the `.py` extension
+
+1. Programs are interpreted by the `Python Interpreter` program and executed by the `CPU`.
+    1. The interpreter "interprets" source code and translates it into code the computer can execute.
+    1. The interpreter can run interactively allowing you to write and execute Python code line by line.
+    1. The interpreter can be provided a file to execute 
+
+---
+
+<br>
+
+
+## `Sequential Programming`
+`In Python, program instructions written as source code are executed one by one from top to bottom and left to right.`  
+* This is known as `sequential programming`.
+<br>
+
+Basically: `Sequential Programming` is when program instructions are executed one at a time, from start to finish, in fixed linear order. 
+
+Specifically: `Sequential Programming` is a programming model where operations are executed one after another, without overlapping or parallel execution.
+* Each step must finish before the next one begins.
+
+---
+
+<br>
+
+The following terms are also good to know when dealing with Programs:
+| **Term**              | **Definition**                                                                 |
+|------------------------|--------------------------------------------------------------------------------|
+| `Syntax`             | The set of rules that define the correct structure of code in a programming language. `The way the language is written.` |
+| `Comments`           | Notes written in code to explain what it does; ignored during execution. aka `Documentation`      |
+| `Data`               | Raw facts or information (like numbers or text) used by a program.            |
+| `Data Structure`     | A way to organize and store data (e.g., lists, arrays, dictionaries).         |
+| `Variable`           | A named location in memory to store data that can change during execution.    |
+| `Operator`           | A symbol that performs an action on values (e.g., `+`, `-`, `==`).            |
+| `Control Structure`  | Directs the flow of a program using decisions and repetition (e.g., `if`, `while`). |
+| `Procedure Definition` | Writing a named block of code (function) to perform a specific task.        |
+| `Procedure Call`     | Using or running a procedure (function) that was previously defined.          |
+| `Class`              | A blueprint for creating objects; defines properties and behaviors.           |
+| `Object`             | An instance of a class; contains data and functions defined by the class.     |
+| `Algorithm`          | A step-by-step set of instructions to solve a problem or perform a task.      |
+
+<br>
+<br>
+
+`*IMPORTANT NOTE*` <br>
+In these notes:
+* `<>` angle brackets indicate a variable part of the command. For example: \<filepath> indicates any filepath  
+* For simplicity commands with a leading `>` should be understood as Windows Commands unless otherwise specified 
+* For simplicity commands with leading `$` should be understood to be Linux/MacOS commands unless otherwise specified  
+---
+
+<br>
+
+Now that you have the basics, create a new file that ends in `.py`, open it in your favorite text editor and let's begin learning about the Python Programming Language.
+> * If it is your first time programming I recommend VScode as a text editor you can get it here: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+<br>
+
+[Back to Top](#introduction-to-python-comments-input-output-and-errors)
+___
+
+<br>
+
+# `Comments and Documentation`
+Basically: A `comment` is a note written in a code file. 
+
+Specifically: A `comment` is piece of text written within source code that is ignored by the interpreter.
+
+<br>
+
+Comments:
+* Are ignored by the interpreter
+* Are used to document code (make notes) for yourself and others.
+* It is considered best practice to comment and document your code. 
+* Are used to temporarily disable parts of code during debugging, without deleting the code. 
+
+<br>
+<br>
+
+`Documentation` refers to written text or materials that explain how a software system, library, function, or codebase works. 
+* Documentation is intended to help users and developers understand, use, and maintain the code effectively.
+* Comments are one way to document code for yourself and others.
+
+<br>
+
+Documentation in Python:
+1. Comments
+2. Docstrings
+3. External Documentation (other files/tools)
+
+
+`The best programmers write easy to read and well documented (commented) code.`
 
 <br>
 
@@ -185,8 +250,8 @@ To build your first program use the built-in `print()` function call to send out
 
 <br>
 
-> Here we will print out "Hello World".   
-> Literal text must be written in quotes, and is called a string. 
+> Here we will print out the text "Hello World".   
+> `Text data` also called `literal text` must be written in quotes (`'` or `"`), and is called a `string`. 
 
 
 ```python
@@ -256,22 +321,31 @@ ___
 
 # `Executing a Python Program`
 
-Congrats you have written your first python program! Now, how do you get the computer to run this 'code'?
+Congrats you have written your first python program! Now, how do you get the computer to run the code you have just written?
+
+The code you have just written is called `source code`. Source code is high level human readable code. 
 
 <br>
 
 ## `How Python Source Code is executed`
-What you have just written is called `source code`. <br>
 
-`Source code` refers to the human-readable set of instructions and statements written by a programmer using a programming language.  <br>
+`Source code` refers to the human-readable set of instructions and statements written by a programmer using a programming language.  
+* While it may not seem like it, source code is not actually understandable to the computer.
 
-While it may not seem like it, the code that you have just written is not actually readable by the computer.<br>
+<br>
 
-We will need another program to translate this `high-level source code` into another form of code that the computer can understand.   
+A special program is needed to translate this `high-level human-readable source code` into another form of code that the `Python interpreter` can understand called `bytecode` and finally, `machine code` that is executed by the `CPU`.  
 
-For Python this program is the `Python interpreter`.  
-* on Windows: python.exe
-* on Mac/Linux: python3 
+* `Bytecode` is an intermediate, lower-level representation of your source code. It is generated by interpreters or compilers and is not directly executed by the hardware.
+
+* `Machine code` is the set of binary instructions directly understood by a computer's `CPU`. It’s the final stage of code execution.
+
+<br>
+
+In Python, the program doing the translating is the `Python interpreter`. 
+* Source code is compiled into `bytecode` by the Python interpreter. 
+* Then the `python virtual machine PVM` converts the byte code into machine code and the CPU  executes the instructions one by one.
+
 
 <br>
 
@@ -289,41 +363,88 @@ For Python this program is the `Python interpreter`.
 |stored in .py file|python.exe (Windows)python3 (Linux/MacOS)|stored in a .pyc file inside of the \_\_pycache\_\_ directory. <br>Is platform independent|PVM|Is platform dependent||Output|
 ||||||||  
 
-*Python source code is written in text form and stored in a .py file. When this code is executed, it passes to the Python interpreter (python.exe on Windows or python3 on Linux/MacOS), which converts the source code into bytecode. The bytecode is stored in a .pyc file inside the __pycache__ directory and is platform-independent at this stage. The Python Virtual Machine (PVM) then interprets this bytecode and translates it into machine code, which is platform-dependent. Finally, the machine code is processed by the CPU to generate the output.*
+<br>
+
+1. *Python `source code` is written in text form and stored in a `.py` file.*
+1. *When this code is executed, it passes to the `Python interpreter `(`python.exe` on Windows or `python3` on Linux/MacOS), which converts the source code into `bytecode`.* 
+1. *The `bytecode` is stored in a `.pyc` file inside the` __pycache__` directory and is platform-independent at this stage.*
+1. *The `Python Virtual Machine (PVM)` then interprets this `bytecode` and translates it into `machine code`, which is platform-dependent.*
+
+1. *Finally, the `machine code` is processed by the `CPU` to generate the output.*
 
 <br>
 
-* Source code like this is compiled into byte code by the python interpreter.  
-  * Windows: python.exe
-  * Linux/MacOS: python3
 
-* Then the python virtual machine PVM converts the bytecode into machinecode and the CPU  executes the instructions one by one.
 
 <br>
 
-## `Executing Your Program`
-To execute your own Python program:
-1. Invoke the interpreter through the command line or python shell and provide your filename as an argument.  
-2. Hit ENTER
+## `Executing Your Program: Invoking the Interpreter`
 
-> Windows Syntax:
+Basically: The `Python Interpreter` is a program that reads Python source code line by line and executes the instructions. 
+
+Specifically: The `Python Interpreter` is a program that `interprets` Python source code line by line and translates the high level Python instructions into `byte code` that is then translated by the `Python Virtual Machine PVM` into `machine code` that in turn is executed by the `CPU`. 
+* The filename of the interpreter is different on differnt operating systems:
+    * on Windows: `python.exe`
+    * on Mac/Linux: `python3`
+
+
+<br>
+
+On any system invoking (running) the interpreter without a filepath argument will run the interpreter in interactive mode, allowing you to execute code line by line as you type it. 
+* This is useful for understanding what code is doing as a beginner. 
+* `>>>` is the Python interpreter prompt indicating that the program is ready for instructions.
+* type `exit()` the leave interactive mode
+
+example:
 ```
-> python <filename>
-```
-> Windows Example:
-```  
-> python main.py 
+>>> print("Hello World")
+Hello World
+>>> 5 + 2
+7
+>>> x = "data"
+>>> x
+'data'
+>>> exit()
 ```
 <br>
 
-> Linux/MacOS Syntax:
+### `Executing on Windows`
+The python interpreter is invoked using the `python` command on Windows <br>
+* `>` represents the terminal prompt and can be omitted:
 ```
-$ python3 <filename>
+> python
+```   
+The interpreter can be invoked and provided a filepath argument in order to interpret code written in a text file (`.py`)  
+syntax:
 ```
-> Linux/MacOS Example:
-``` 
+> python <filepath>
+```
+example:
+```
+> python main.py
+```
+
+
+<br>
+
+### `Executing on Linux/MacOS` 
+The python interpreter is invoked using the `python3` command on UNIX like systems (Linux, Mac) <br>
+* `$` represents the terminal prompt and can be omitted:
+```
+$ python3
+```
+The interpreter can be invoked and provided a filepath argument in order to interpret code written in a text file (`.py`)
+
+syntax:
+```
+$ python3 <filepath>
+```
+example:
+```
 $ python3 main.py
 ```
+
+<br>
 
 <br>
 
@@ -403,17 +524,19 @@ ___
 Oh no... you have done something incorrect and are now experiencing an error. 
 Not to worry as a human you are prone to many errors, that we machines don't make.
 
-> To make it easier for you to correct your many `PEBKAC` and `ID 10 T` Errors, these errors can be categorized into 3 categories:
+<br>
+
+To make it easier for you to correct your many `PEBKAC` and `ID 10 T` Errors, these errors can be categorized into 3 categories:
 
 |Error|Description|
 |:-:|:-|
-|Syntax/Compile Time Errors|occur when compiling the code, and the code violates the rules of the programming language's syntax.|
-|Runtime Errors|occur after the program has been successfully compiled and started execution. They usually result from operations that are not possible to perform.|
-|Logical Errors|occur when a program runs without crashing but produces incorrect results. These errors are caused by mistakes in the program's logic, meaning the code does not behave as intended.|
+|`Syntax/Compile Time Errors`|occur when compiling the code, and the code violates the rules of the programming language's syntax.|
+|`Runtime Errors`|occur after the program has been successfully compiled and started execution. They usually result from operations that are not possible to perform.|
+|`Logical Errors`|occur when a program runs without crashing but produces incorrect results. These errors are caused by mistakes in the program's logic, meaning the code does not behave as intended.|
 
-*Note*:
-> * `PEBKAC Errors` are raised when the Problem Exists Between the Keyboard and Chair.
-> * `ID 10 T Errors` are raised when the issue is caused by the user. 
+`NOTE:`
+* `PEBKAC Errors` are raised when the Problem Exists Between the Keyboard and Chair.
+* `ID 10 T Errors` are raised when the issue is caused by the user. 
 
 <br>
 
@@ -527,6 +650,7 @@ ___
 
 ### Lets try an example with a common beginner mistake
 *In this problem we will be printing out the first 8 powers of 2*
+
 Here is what we expect:
 |2^n|Answer|
 |:-:|:-:|
@@ -656,5 +780,44 @@ ___
 
 <br>
 
+# `Debugging`
+`Debugging` is the process of identifying, analyzing, and fixing bugs or errors in software.
+
+<br>
+<br>
+
+Debugging occurs in the following steps:
+| Step Number | Step Name       | Description|
+|-|---|-------|
+| 1 | `Detection` | Identifying that a bug exists, typically through user reports, test failures, or odd behavior. |
+| 2 | `Reproduction`| Reproducing the problem consistently to understand how and when it occurs. |
+| 3 | `Diagnosis` | Investigating and determining the root cause of the bug within the code or system. |
+| 4 | `Correction`| Making the necessary code or configuration changes to fix the bug. |
+| 5 | `Testing` | Verifying that the fix works and does not introduce new issues.|
+| 6 | `Documentation` | Recording details about the bug, its cause, the fix applied, and any relevant notes. |
+| 7 | `Prevention`| Implementing safeguards like tests, code reviews, or design changes to avoid future bugs.|
+
+
+
+<br> 
+
+Common Methods of Debugging:
+| Technique | Definition | Description |
+|------------------------------|------------------------------------|-----------------------------------------------------------------------------------------------|
+| `Hand Tracing` | Manually reading through the code | Stepping through code line by line (on paper or mentally) to track variable values and logic flow. |
+| `Adding Output Statements` | Print values during execution| Inserting `print()` or logging statements to display variable values and check the program’s progress or logic. |
+| `Test Cases` | Check input-output behavior| Designing specific scenarios with known inputs and expected outputs to ensure code correctness and isolate bugs. |
+| `Debugging Tools`| Using a software tool to find bugs  | Employing tools like IDE debuggers to set breakpoints, inspect memory, and step through code interactively. |
+
+
+
+
+<br>
+
+[Back to Top](#introduction-to-python-comments-input-output-and-errors)
+___
+
+<br>
+
 *Created and maintained by Mr. Merritt* 
-    
+  
